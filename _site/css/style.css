@@ -15,9 +15,9 @@ body {
     color: #333;
     display: grid;
     grid-template-areas:
-        "navigation header"
-        "navigation main"
-        "footer footer";
+        "navigation header header header header"
+        "navigation main main main main"
+        "footer footer footer footer footer";
     grid-gap: 10px;
 }
 

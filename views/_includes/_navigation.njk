@@ -1,0 +1,10 @@
+<nav>
+    <h2 class="visually-hidden">Navigation</h2>
+    <ul>
+        {% for page in collections.navPages %}
+            <li>
+                <a href="{{ page.url }}">{{ page.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

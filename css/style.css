@@ -9,6 +9,7 @@
     --zfa-orange-main: #f28b48;
     --zfa-blue-second: #b4c7d6;
     --zfa-orange-second: #f9bda6;
+    --gradient-nav: radial-gradient(circle,rgba(33, 82, 143, 1) 16%, rgba(38, 61, 166, 1) 45%, rgba(23, 35, 150, 1) 100%);
 }
 
 body {
@@ -35,9 +36,19 @@ main {
 
 nav {
     grid-area: navigation;
-    background-color: #ffddff;
+    background: #36007d;
+    background: var(--gradient-nav);
     border-radius: 1rem;
     padding: .5rem;
+    color: #fff;
+}
+
+nav li {
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
 }
 
 header {

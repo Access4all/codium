@@ -16,8 +16,8 @@ Beispiele für gute und schlechte Barrierefreiheit
 - Möchtest du eine neue Seite mit Beispielen erstellen?
     - erstelle ein neues HTML Dokument direkt im Verzeichnis <code>/Codium/View/</code>
     - füge den Nunjuk Header ein (siehe bestehende Dokumente). Der Header wird mittels <code>---</code> eingeschlossen.
-    - Füge ein <code><header></code> Element für eine Einleitung deiner Seite hinzu
-    - Füge ein <code><main></code> Element für deinen Inhalt hinzu
+    - Füge ein <code>header</code> Element für eine Einleitung deiner Seite hinzu
+    - Füge ein <code>main</code> Element für deinen Inhalt hinzu
 
 
 

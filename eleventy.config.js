@@ -7,13 +7,12 @@ module.exports = function (eleventyConfig) {
         layout: "_skeleton.njk"
     };
 
-    // ✅ Explicitly set template engine to Nunjucks
     eleventyConfig.setTemplateFormats(["njk", "html"]);
     
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
 
     eleventyConfig.addCollection("navPages", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("views/*.html");
+        return collectionApi.getFilteredByGlob("views/**/*.html");
     });
 };

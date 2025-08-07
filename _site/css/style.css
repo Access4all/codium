@@ -3,13 +3,13 @@
 }
 
 :root {
-    --code-box-color: #333;
-    --text-box-color: #ddd;
-    --zfa-blue-main: #224080;
-    --zfa-orange-main: #f28b48;
-    --zfa-blue-second: #b4c7d6;
-    --zfa-orange-second: #f9bda6;
-    --gradient-nav: radial-gradient(circle,rgba(33, 82, 143, 1) 16%, rgba(38, 61, 166, 1) 45%, rgba(23, 35, 150, 1) 100%);
+    --code-box-color: hsl(0, 0%, 20%);
+    --text-box-color: hsl(0, 0%, 100%);
+    --zfa-blue-main: hsl(221, 58%, 32%);
+    --zfa-orange-main: hsl(24, 87%, 62%);
+    --zfa-blue-second: hsl(206, 29%, 77%);
+    --zfa-orange-second: hsl(17, 87%, 81%);
+    --gradient-nav: radial-gradient(circle, rgba(33, 82, 143, 1) 16%, rgba(38, 61, 166, 1) 45%, rgba(23, 35, 150, 1) 100%);
 }
 
 body {
@@ -19,7 +19,8 @@ body {
         "navigation header header header header"
         "navigation main main main main"
         "footer footer footer footer footer";
-    grid-template-columns: 200px 1fr 1fr 1fr 1fr; /* ← fix column widths */
+    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    /* ← fix column widths */
     grid-gap: 10px;
 }
 
@@ -80,12 +81,25 @@ pre {
 }
 
 .code-snippet {
+    display: block;
+    background-color: var(--code-box-color);
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     word-wrap: break-word;
+    padding: 1rem;
+    margin: 16px 0px 16px 0px;
+    border-radius: .5rem;
     overflow-x: auto;
     height: fit-content;
+}
+
+.example-container {
+    background-color: var(--text-box-color);
+    padding: 1rem;
+    margin: 16px 0px 16px 0px;
+    display: block;
+    border-radius: .5rem;
 }
 
 .description {
@@ -93,7 +107,7 @@ pre {
     /* dunkler Hinergrund, ähnlich wie in VSCode */
     color: #000;
     /* heller Text für höheren Kontrast */
-    padding: 20px;
+    padding: 1rem;
     /* Text wird um 20 Pixel von allen Seiten eingerückt */
     border-radius: 5px;
     /* die Ecken werden abgerundet */

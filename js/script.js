@@ -7,6 +7,3 @@ function addAsCode(sourceElement, language) {
     //document.currentScript.parentNode.classList.add("code-snippet")
     //hljs.highlightAll()
 }
-
-// Call the function once the page content has loaded
-window.addEventListener('DOMContentLoaded', loadComponents);

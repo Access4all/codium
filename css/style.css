@@ -14,8 +14,8 @@
     --gradient-nav: radial-gradient(circle, rgba(33, 82, 143, 1) 16%, rgba(38, 61, 166, 1) 45%, rgba(23, 35, 150, 1) 100%);
 
     --bg-dark-0: hsl(0, 0%, 0%);
-    --bg-dark-5: hsl(0, 0%, 5%);
-    --bg-dark-10: hsl(0, 0%, 10%);
+    --bg-dark-5: hsl(0, 0%, 10%);
+    --bg-dark-10: hsl(0, 0%, 15%);
 
     --text-light-95: hsl(0, 0%, 95%);
     --text-light-70: hsl(0, 0%, 70%);

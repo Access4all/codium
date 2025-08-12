@@ -1,25 +1,37 @@
 * {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
-    --code-box-color: #333;
-    --text-box-color: #ddd;
-    --zfa-blue-main: #224080;
-    --zfa-orange-main: #f28b48;
-    --zfa-blue-second: #b4c7d6;
-    --zfa-orange-second: #f9bda6;
+    --landmark-padding: 2rem 3rem 2rem 3rem;
+
+    --code-box-color: hsl(0, 0%, 20%);
+    --text-box-color: hsl(0, 0%, 100%);
+    --zfa-blue-main: hsl(221, 58%, 32%);
+    --zfa-orange-main: hsl(24, 87%, 62%);
+    --zfa-blue-second: hsl(206, 29%, 77%);
+    --zfa-orange-second: hsl(17, 87%, 81%);
+    --gradient-nav: radial-gradient(circle, rgba(33, 82, 143, 1) 16%, rgba(38, 61, 166, 1) 45%, rgba(23, 35, 150, 1) 100%);
+
+    --bg-dark-0: hsl(0, 0%, 0%);
+    --bg-dark-5: hsl(0, 0%, 10%);
+    --bg-dark-10: hsl(0, 0%, 15%);
+
+    --text-light-95: hsl(0, 0%, 95%);
+    --text-light-70: hsl(0, 0%, 70%);
 }
 
 body {
-    color: #333;
     display: grid;
     grid-template-areas:
         "navigation header header header header"
         "navigation main main main main"
         "footer footer footer footer footer";
-    grid-template-columns: 200px 1fr 1fr 1fr 1fr; /* ← fix column widths */
+    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    /* ← fix column widths */
     grid-gap: 10px;
+    background-color: var(--bg-dark-0);
+    color: var(--text-light-70);
 }
 
 content {
@@ -28,61 +40,81 @@ content {
 
 main {
     grid-area: main;
-    background-color: #d2f1ff;
+    background-color: var(--bg-dark-5);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: var(--landmark-padding);
 }
 
 nav {
     grid-area: navigation;
-    background-color: #ffddff;
+    background: var(--bg-dark-5);
     border-radius: 1rem;
     padding: .5rem;
+    color: var(--text-light-95);
+}
+
+nav li {
+    color: var(--text-light-95);
+}
+
+nav a {
+    color: var(--text-light-95);
 }
 
 header {
     grid-area: header;
-    background-color: #ffefcd;
+    background-color: var(--bg-dark-5);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: var(--landmark-padding);
 }
 
 footer {
     grid-area: footer;
-    background-color: #dbffdc;
+    background-color: var(--bg-dark-5);
     border-radius: 1rem;
     padding: 2rem;
+    color: var(--text-light-70);
 }
 
 h1 {
     display: flex;
     flex-direction: column;
+    color: var(--text-light-95);
 }
 
-h1 * {
-    font-size: 14pt;
-}
-
-pre {
-    background-color: #333;
-    border-radius: 5px;
+h2 {
+    color: var(--text-light-95);
 }
 
 .code-snippet {
-    color: #fff;
+    display: block;
+    background-color: var(--bg-dark-10);
+    color: var(--text-light-70);
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     word-wrap: break-word;
+    padding: 1rem;
+    margin: 16px 0px 16px 0px;
+    border-radius: .5rem;
     overflow-x: auto;
     height: fit-content;
 }
 
+.example-container {
+    background-color: var(--bg-dark-10);
+    color: var(--text-light-95);
+    padding: 1rem;
+    margin: 16px 0px 16px 0px;
+    display: block;
+    border-radius: .5rem;
+}
+
 .description {
-    background-color: #eee;
+    background-color: var(--bg-dark-10);
     /* dunkler Hinergrund, ähnlich wie in VSCode */
-    color: #000;
+    color: var(--text-light-95);
     /* heller Text für höheren Kontrast */
-    padding: 20px;
+    padding: 1rem;
     /* Text wird um 20 Pixel von allen Seiten eingerückt */
     border-radius: 5px;
     /* die Ecken werden abgerundet */

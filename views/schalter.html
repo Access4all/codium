@@ -1,0 +1,31 @@
+---
+layout: _skeleton.njk
+title: Schalter - Codium
+---
+
+<header>
+    <h1>Schalter</h1>
+    <p>
+        Hier zeigen wir gute und schlechte Beispiele von Schaltern.
+    </p>
+</header>
+
+<main>
+    <h1>Gutes Beispiel</h1>
+        <button type="button" onclick="alert('Hilfe, ich wurde geklickt!')">Klicke mich!</button>
+        <p class="code-snippet" id="buttons-good-example-1"><code></code></p>
+         <script>document.getElementById("buttons-good-example-1").children[0].textContent = "<button type='button' onclick=\"alert('Hilfe, ich wurde geklickt!')\">Klicke mich!</button>"</script>
+
+    <h1>Schlechtes Beispiel</h1>
+        <p class="description">Dieser Button wird zwar vom Screenreader als Button erkannt, löst aber nichts aus, wenn
+            er
+            mit der Tastatur gedrückt wird.</p>
+        <div role="button" tabindex="0" class="dummy-button">
+            Falscher Button
+        </div>
+        <p class="code-snippet" id="buttons-bad-example-1"><code></code></p>
+        <script>document.getElementById("buttons-bad-example-1").children[0].textContent = "<div role='button' tabindex='0'>Falscher Button</div> "</script>
+</main>
+    <footer>
+        <p>Hier ist noch ein leerer footer</p>
+    </footer>

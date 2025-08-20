@@ -1,0 +1,72 @@
+---
+layout: _skeleton.njk
+title: Überschriften - Codium
+---
+
+<header>
+    <h1>
+        Überschriften
+    </h1>
+</header>
+<main>
+    <h1 class="visually-hidden">Gute Beispiele</h1>
+        <h1>Eine Überschrift der Ebene 1</h1>
+        <p>Dies ist ein Gutes Beispiel einer Überschrift. Sie wird vom Screenreader als Überschrift ausgegeben.</p>
+        <h2>Die nächste Ebene</h2>
+        <p>Gutes Beispiel einer Überschrift 2.</p>
+        <h3>Und hier die dritte Ebene</h3>
+        <p>Gutes Beispiel Überschrift 3.</p>
+        <h1 id="subtitles-good-example-1">Eine Überschrift 1
+            <span class="subtitle">Diesmal mit Untertitel</span>
+        </h1>
+        <p>
+            Diese Überschrift hat einen Untertitel. Der Screenreader liest Überschrift und Untertitel auf einmal vor,
+            während der Untertitel visuell formatiert werden kann:
+        <pre>
+        <code class="code-snippet">
+            <script>addAsCode("subtitles-good-example-1");</script>
+        </code >
+        </pre>
+        </p>
+        <hr>
+        </hr>
+    <h1 class="visually-hidden">Schlechte Beispiele</h1>
+        <span class="false-h1">Eine Überschrift der Ebene 1</span>
+        <p>Diese Überschrift wird vom Screenreader nicht erkannt, da sie nur mit CSS formatiert und semantisch nicht
+            ausgezeichnet ist.</p>
+        <span class="false-h2">Die nächste Ebene</span>
+        <p>Hier eine semantisch nicht ausgezeichnete Überschrift der Ebene 2.</p>
+        <span class="false-h3">Und hier die dritte Ebene</span>
+        <p>hier das gleiche Problem auf Ebene 3.</p>
+        <hgroup id="subtitles-bad-example-1">
+            <h1>Eine Überschrift der Ebene 1</h1>
+            <p class="false-subtitle" role="doc-subtitle">Und hier der Untertitel</p>
+        </hgroup>
+        <p>
+        <pre>
+        <code class="code-snippet">
+            <script>addAsCode("subtitles-bad-example-1");</script>
+        </code >
+        </pre>
+        </p>
+        <p>
+            Der Screenreader gibt den Untertitel als Überschrift 5 aus, was nicht korrekt ist, da Überschriftenebenen
+            ausgelassen werden.
+        </p>
+        <ul>
+            <li>Das "hgroup"-Element ist in der HTML5-Spezifikation zwar nicht veraltet, wird aber von vielen Browsern
+                und Assistenztechnologien nicht vollständig unterstützt. Vor allem Screenreader interpretieren hgroup
+                uneinheitlich.</li>
+            <li>role="doc-subtitle" ist ein sogenanntes ARIA-Rollen-Attribut. Es ist zwar semantisch korrekt, aber:
+                <ul>
+                    <li>Nicht alle Screenreader erkennen es gleich gut.</li>
+                    <li>Viele screenreaderfreundliche Techniken bevorzugen native semantische HTML-Elemente gegenüber
+                        ARIA-Rollen.</li>
+                </ul>
+        </ul>
+        <p>
+            Was wahrscheinlich passiert: Der Screenreader nimmt das
+            &lt;p role="doc-subtitle"&gt; und interpretiert es als Überschrift, weil es in einem Kontext steht, in dem
+            normalerweise nur Überschriften vorkommen (eben &lt;hgroup&gt;).
+        </p>
+</main>

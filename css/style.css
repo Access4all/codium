@@ -21,6 +21,7 @@
     --bg-dark-0: hsl(0, 0%, 0%);
     --bg-dark-5: hsl(0, 0%, 10%);
     --bg-dark-10: hsl(0, 0%, 15%);
+    --bg-dark-15: hsl(0, 0%, 25%);
 
     --text-light-95: hsl(0, 0%, 95%);
     --text-light-70: hsl(0, 0%, 70%);
@@ -61,17 +62,39 @@ nav {
 nav ul {
     padding: 0px;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: .5rem;
+    margin: .2rem .4rem .2rem .4rem;
 }
 
 nav li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
     color: var(--text-light-95);
     list-style: none;
     display: block;
-    padding: .4rem;
+    padding: .7rem;
+    background-color: var(--bg-dark-10);
+    border-radius: 5px;
+}
+
+nav li:hover {
+    background-color: var(--bg-dark-15);
 }
 
 nav a {
     color: var(--text-light-95);
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 header {

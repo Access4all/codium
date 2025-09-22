@@ -1,0 +1,41 @@
+---
+layout: _skeleton.njk
+title: ARIA
+---
+
+<header>
+    <h1>Alles mit ARIA bitte!</h1>
+    <p>Auf dieser Seite werden relevante Beispiele zur Verwendung verschiedener ARIA-Attribute aufgeführt.</p>
+</header>
+<main>
+    <h2 id="aria-laballed-by-example-1">arialabelledby=""</h2>
+    <p>Hier ist eine Liste von Links umgesetzt. Der Link "Peter" besitzt ein aria-labelledby attribut und sollte auf die
+        Überschrift dieses Abschnittes verweisen. Ein Screenreader sollte somit beim Fokussieren des Links "Peter" den
+        Text der Überschrift erneut ausgeben (aria-labelledby="")</p>
+    <ul id="aria-labelled-by-example-2">
+        <li><a href="#">Hanna</a></li>
+        <li><a href="#" aria-labelledby="aria-laballed-by-example-1">Peter</a></li>
+        <li><a href="#">Urs</a></li>
+        <li><a href="#">Helmine</a></li>
+    </ul>
+    <h3>mögliche Stolpersteine</h3>
+    <p>Ist es möglich, dass das labelledby Element nicht vom Screenreader ausgegeben wird, wenn sich innerhalb des
+        verlinkten Elementes weitere Elemente mit eigenem Inhalt befinden?</p>
+    <p>Der Link "Peter" weist erneut ein aria-labelledby Attribut auf, doch diesmal ist das Ul-Element der vorherigen
+        Liste verlinkt. Dieses Ul-Element beinhaltet mehrere Elemente, die wiederum eigenen Text beinhalten. Was wird
+        nun ausgegeben, wenn der Screenreader den Link "Peter" fokussiert?</p>
+    <ul>
+        <li><a href="#">Hanna</a></li>
+        <li><a href="#" aria-labelledby="aria-laballed-by-example-2">Peter</a></li>
+        <li><a href="#">Urs</a></li>
+        <li><a href="#">Helmine</a></li>
+    </ul>
+    <h3>Ganze listen labeln</h3>
+    <p>Was passiert, wenn direkt auf ein UL-Element ein aria-labelledby attribute angewendet wird?</p>
+    <ul aria-labelledby="aria-laballed-by-example-1">
+        <li><a href="#">Hanna</a></li>
+        <li><a href="#">Peter</a></li>
+        <li><a href="#">Urs</a></li>
+        <li><a href="#">Helmine</a></li>
+    </ul>
+</main>

@@ -69,7 +69,7 @@ body {
         "navigation header header header header"
         "navigation main main main main"
         "footer footer footer footer footer";
-    grid-template-columns: 200px 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 200px 1fr 1fr 1fr 1fr; */
     /* ← fix column widths */
     grid-gap: 10px;
     background-color: var(--bg-dark);

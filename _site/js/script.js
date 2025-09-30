@@ -7,3 +7,7 @@ function addAsCode(sourceElement, language) {
     //document.currentScript.parentNode.classList.add("code-snippet")
     //hljs.highlightAll()
 }
+
+function toggle() {
+    document.body.classList.toggle("light");
+}

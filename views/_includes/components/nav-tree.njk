@@ -1,0 +1,30 @@
+{% macro renderTree(tree, level = 1) %}
+<ul class="tree-level-{{ level }}">
+  {% if level == 1 %}
+    <li><a href="/" class="tree-link tree-level-1">Home</a></li>
+  {% endif %}
+  {% for key, item in tree %}
+    <li>
+
+      
+
+      {% if item.url %}
+        <a href="{{ item.url }}" class="tree-link tree-level-{{ level }}">{{ item.title }}</a>
+      {% else %}
+        {% if item.children and item.children | length %}
+            <button class="tree-toggle" aria-expanded="false" onclick="toggleTree(this)">
+                <span class="tree-link tree-level-{{ level }}">{{ item.title }}</span><span class="tree-level-toggle-indicator">─</span>
+            </button>
+        {% endif %}
+      {% endif %}
+
+      {% if item.children and item.children | length %}
+        <div class="tree-children hidden">
+          {{ renderTree(item.children, level + 1) }}
+        </div>
+      {% endif %}
+
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}

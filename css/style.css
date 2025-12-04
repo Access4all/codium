@@ -41,6 +41,8 @@ h4 {
     --radioactive: hsl(98, 60%, 15%);
     --radioactive-light: hsl(98, 60%, 25%);
 
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+
     --color-mode-text: "☀️ Light Mode";
 }
 
@@ -69,7 +71,7 @@ body {
         "navigation header header header header"
         "navigation main main main main"
         "footer footer footer footer footer";
-    /* grid-template-columns: 200px 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     /* ← fix column widths */
     grid-gap: 10px;
     background-color: var(--bg-dark);
@@ -98,7 +100,7 @@ nav {
 }
 
 nav ul {
-    padding: 1rem;
+    padding: 0px;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -116,7 +118,6 @@ nav li {
     color: var(--text);
     list-style: none;
     display: block;
-    padding: .7rem;
     background-color: var(--bg-light);
     border-radius: 5px;
     border: 1px solid var(--bg-border);
@@ -133,6 +134,35 @@ nav a {
     display: block;
     width: 100%;
     height: 100%;
+    padding: .7rem;
+    box-sizing: border-box;
+}
+
+.tree-toggle {
+  background: none;
+  cursor: pointer;
+  margin-right: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tree-children.hidden {
+  display: none;
+}
+
+.tree-level-2 .tree-link {
+    padding-left: 1rem;
+}
+
+.tree-level-3 .tree-link {
+    padding-left: 3rem;
+}
+
+.tree-level-toggle-indicator {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header {

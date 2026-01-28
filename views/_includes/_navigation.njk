@@ -3,7 +3,7 @@
   <button onclick="toggleTheme()" id="theme-toggler"></button>
 
   {% from "components/nav-tree.njk" import renderTree %}
-  {{ renderTree(collections.navPages | navTree) }}
+  {{ renderTree(collections.navPages | navTree, 1, page.url) }}
 
 </nav>
 

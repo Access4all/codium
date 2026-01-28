@@ -16,6 +16,17 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("views/**/*.html");
   });
 
+  eleventyConfig.addFilter("isInPath", function (item, currentUrl) {
+    function checkPath(node) {
+      if (node.url === currentUrl) return true;
+      if (node.children) {
+        return Object.values(node.children).some((child) => checkPath(child));
+      }
+      return false;
+    }
+    return checkPath(item);
+  });
+
   eleventyConfig.addFilter("navTree", (pages) => {
     const tree = {};
 

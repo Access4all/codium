@@ -1,29 +1,28 @@
-{% macro renderTree(tree, level = 1) %}
+{% macro renderTree(tree, level = 1, currentUrl = '') %}
 <ul class="tree-level-{{ level }}">
   {% if level == 1 %}
-    <li><a href="/" class="tree-link tree-level-1">Home</a></li>
+    <li><a href="/" class="tree-link tree-level-1{% if currentUrl == '/' %} active{% endif %}">Home</a></li>
   {% endif %}
   {% for key, item in tree %}
+    {% set isActive = item.url == currentUrl %}
+    {% set hasActiveDescendant = item | isInPath(currentUrl) %}
+    
     <li>
-
-      
-
       {% if item.url %}
-        <a href="{{ item.url }}" class="tree-link tree-level-{{ level }}">{{ item.title }}</a>
+        <a href="{{ item.url }}" class="tree-link tree-level-{{ level }}{% if isActive %} active{% endif %}">{{ item.title }}</a>
       {% else %}
         {% if item.children and item.children | length %}
-            <button class="tree-toggle" aria-expanded="false" onclick="toggleTree(this)">
-                <span class="tree-link tree-level-{{ level }}">{{ item.title }}</span><span class="tree-level-toggle-indicator">─</span>
+            <button class="tree-toggle" aria-expanded="{% if hasActiveDescendant %}true{% else %}false{% endif %}" onclick="toggleTree(this)">
+                <span class="tree-link tree-level-{{ level }}">{{ item.title }}</span><span class="tree-level-toggle-indicator">{% if hasActiveDescendant %}|{% else %}─{% endif %}</span>
             </button>
         {% endif %}
       {% endif %}
 
       {% if item.children and item.children | length %}
-        <div class="tree-children hidden">
-          {{ renderTree(item.children, level + 1) }}
+        <div class="tree-children{% if not hasActiveDescendant %} hidden{% endif %}">
+          {{ renderTree(item.children, level + 1, currentUrl) }}
         </div>
       {% endif %}
-
     </li>
   {% endfor %}
 </ul>

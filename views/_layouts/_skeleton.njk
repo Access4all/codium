@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="/js/script.js"></script>
     <title>Codium - Die kleine Welt der digitalen Barrierefreiheit</title>
+    <script>
+        // Inline script to prevent flash - runs before body exists
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                // Add class to html element since body doesn't exist yet
+                document.documentElement.style.setProperty('--temp-light', 'true');
+            }
+        })();
+    </script>
 </head>
 
 <body>

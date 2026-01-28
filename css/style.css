@@ -253,6 +253,7 @@ button {
     display: block;
     border: 1px solid var(--radioactive-dark);
     color: var(----radioactive-light);
+    cursor: pointer;
 }
 
 #theme-toggler::before {

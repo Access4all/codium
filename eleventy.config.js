@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.setInputDirectory("views");
   eleventyConfig.setIncludesDirectory("_includes");
@@ -47,5 +50,53 @@ module.exports = function (eleventyConfig) {
     });
 
     return tree;
+  });
+
+  eleventyConfig.addShortcode("includeAllScripts", function (directory) {
+    const jsDir = path.join(__dirname, directory);
+    let scripts = "";
+
+    function readDirectory(dir, basePath = "") {
+      const files = fs.readdirSync(dir);
+
+      files.forEach((file) => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+
+        if (stat.isDirectory()) {
+          readDirectory(filePath, path.join(basePath, file));
+        } else if (file.endsWith(".js")) {
+          const scriptPath = path.join(basePath, file).replace(/\\/g, "/");
+          scripts += `<script src="/${directory}/${scriptPath}"></script>\n    `;
+        }
+      });
+    }
+
+    readDirectory(jsDir);
+    return scripts;
+  });
+
+  eleventyConfig.addShortcode("includeAllCSS", function (directory) {
+    const jsDir = path.join(__dirname, directory);
+    let scripts = "";
+
+    function readDirectory(dir, basePath = "") {
+      const files = fs.readdirSync(dir);
+
+      files.forEach((file) => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+
+        if (stat.isDirectory()) {
+          readDirectory(filePath, path.join(basePath, file));
+        } else if (file.endsWith(".css")) {
+          const scriptPath = path.join(basePath, file).replace(/\\/g, "/");
+          scripts += `<link rel="stylesheet" href="/${directory}/${scriptPath}">\n    `;
+        }
+      });
+    }
+
+    readDirectory(jsDir);
+    return scripts;
   });
 };

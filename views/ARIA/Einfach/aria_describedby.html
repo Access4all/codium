@@ -1,0 +1,22 @@
+---
+layout: _skeleton.njk
+title: aria-describedby
+---
+
+<header>
+    <h1>
+        Verknüpfung von Formularfeldern mit aria-describedby
+    </h1>
+</header>
+<main>
+    <article>
+        <h1>
+            Beispiel zum Ausprobieren
+        </h1>
+        <label for="swift-code">SWIFT code</label>
+        <input type="text" id="swift-code" aria-describedby="swift-explanation">
+        <p id="swift-explanation" class="visually-hidden">
+            Ihre Bank hat einen eindeutigen SWIFT-Code, der in der Regel aus 11 Zeichen besteht. Ein Beispiel für einen SWIFT-Code ist „BOFAUS3N“ für die Bank of America. Den SWIFT-Code Ihrer Bank finden Sie unter: ...
+        </p>
+    </article>
+</main>

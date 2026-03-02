@@ -6,7 +6,7 @@ title: Links
 <header>
 	<h1>Links</h1>
 	<p>
-		Auf dieser Seite werden Beispiele für Links umgesetzt.
+		Auf dieser Seite werden Beispiele für Links umgesetzt. Test
 	</p>
 </header>
 <main>
@@ -45,4 +45,30 @@ title: Links
     <script>addAsCode("links-bad-example-1");</script>
 </code >
 </pre>
+<h2>Linktexte in Listen</h2>
+	<p>Oft werden Links unter angefangenen Inhalten aufgeführt, die zum Weiterlesen oder Weiterschauen weiterführen. Sind die Link-Texte nur "Weiterlesen" oder "Weiterschauen", dann sind die Links für Screenreader-Nutzende nicht immer verständlich.</p>
+	<p>Dieses Problem kann gelöst werden, indem ein solcher Link innerhalb eines Parent-Elementes liegt, das den Kontext für diesen Link bessert klärt. Beispielsweise durch eine Liste:</p>
+	<ul>
+		<li>
+			<h3>Test-Item 1</h3>
+			<p>Hier steht ein wenig Text als Beispiel, wer mehr Informationen dazu haben möchte, kann den unteren Link verwenden.</p>
+			<a href="#">Weiterlesen</a>
+		</li>
+		<li>
+			<h3>Test-Item 2</h3>
+			<p>Hier steht ein wenig Text als Beispiel, wer mehr Informationen dazu haben möchte, kann den unteren Link verwenden.</p>
+			<a href="#">Weiterlesen</a>
+		</li>
+		<li>
+			<h3>Test-Item 3</h3>
+			<p>Hier steht ein wenig Text als Beispiel, wer mehr Informationen dazu haben möchte, kann den unteren Link verwenden.</p>
+			<a href="#">Weiterlesen</a>
+		</li>
+	</ul>
+<h2>Linktexte in Paragraphen</h2>
+<p>Auch können Links (oft auch visuell als Schalter gestylt) direkt innerhalb eines Paragraphen liegen, damit der Kontext für einen ansonsten nicht verständlichen Linktextes zu geben.</p>
+<p>Dieser Paragraph ist ein Beispiel dafür. Zuerst wird ein kurzer Text aufgeführt. Möchte der User nun weiterlesen kann er auf den darunter liegenden Link drücken:
+	<br>
+	<a href="#" style="display: inline; margin-top: 1rem;">Weiterlesen</a>
+</p>
 </main>
